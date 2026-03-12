@@ -88,6 +88,11 @@ public class Main {
 
 
     public static void deleteProduct(){
+        if (products.isEmpty()){
+            System.out.println("Danh sách sản phẩm rỗng");
+            return;
+        }
+
        products = products.stream().filter(element -> element.getQuantity() > 0).toList();
         System.out.println("đã xóa các sp có số lượng  = 0");
     }
